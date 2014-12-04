@@ -1,3 +1,7 @@
+DEPRECATION NOTICE
+
+I am no longer working on this cookbook. If you find it useful fork it. Issues are closed.
+
 # Collectd [![Build Status](https://secure.travis-ci.org/miah/chef-collectd.png)](http://travis-ci.org/miah/chef-collectd)
 
 # DESCRIPTION #
