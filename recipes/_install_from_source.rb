@@ -47,5 +47,19 @@ ark 'collectd' do
   prefix_root node['collectd']['prefix_dir']
   path node['collectd']['src_dir']
   creates "#{node['collectd']['sbin_dir']}/collectd"
-  action [:configure, :install_with_make]
+  #action [:configure, :install_with_make]
+  action :configure
+end
+
+build_dir = [
+  node['collectd']['prefix_dir'],
+  [
+    node['collectd']['source_tar_name_prefix'],
+    node['collectd']['version']
+  ].join('')
+].join('/')
+bash 'make, install collectd' do
+  code 'make install'
+  cwd build_dir
+  creates "#{node['collectd']['sbin_dir']}/collectd"
 end
